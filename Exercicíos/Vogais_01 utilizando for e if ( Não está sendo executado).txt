@@ -1,0 +1,32 @@
+int quant = 0;
+            ArrayList zeze = new ArrayList();
+            string amba;
+            Console.WriteLine("Digite uma mensagem:");
+            amba = Console.ReadLine();
+            zeze.Add(amba);
+            Console.WriteLine(zeze.Count);
+           
+            for (int i = -zeze.Count; i < zeze.Count; i++)
+            {
+                if (zeze.Contains("a"))
+                {
+                    quant++;
+                }
+                if (zeze.Contains("e"))
+                {
+                    quant++;
+                }
+                if (zeze.Contains("i"))
+                {
+                    quant++;
+                }
+                if (zeze.Contains("o"))
+                {
+                    quant++;
+                }
+                if (zeze.Contains("u"))
+                {
+                    quant++;
+                }
+                Console.WriteLine("A mensagem tem {0} vogais ", quant);
+            }

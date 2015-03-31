@@ -1,0 +1,20 @@
+double numeros = 1;
+            double ze = 0;
+            double quant = 0;
+        
+            while (numeros != 0)
+            {
+              
+                Console.WriteLine("Digite um número para calcular a média , 0 para parar :");
+                numeros = int.Parse(Console.ReadLine());
+                
+                if (numeros != 0)
+                {
+                 
+                    ze += numeros;
+                    quant ++;
+                }
+            }
+           
+            double media = ze / quant;
+            Console.WriteLine("Você digitou 0 para parar , sua média é : {0}", media);
