@@ -1,0 +1,10 @@
+     static void Main(string[] args)
+        {
+            int n;
+        }
+
+        static bool EhMult(int num , int n)
+        {
+
+            return (num % n == 0);
+}
