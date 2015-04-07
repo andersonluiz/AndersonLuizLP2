@@ -1,0 +1,67 @@
+// Faça um programa que leia uma frase qualquer do usuário .Logo depois , você deve ler um número N e um caracter C , imprima:
+           //1)Pedaços de tamanho N da string
+            //2) Quantas palavras começam com o caracter C
+            /* Exemplos:
+             * ==========
+             * Entrada
+             * ==========
+             * Paranguaricotirimirruaro
+             * 6
+             * p
+             * 
+             * =================
+             * saida
+             * ===============
+             * parang
+             * uarico
+             * tirimi
+             * rruaro
+             * 1
+            */
+            
+            string txt;
+            
+            Console.WriteLine("Digite o texto :");
+            txt = Convert.ToString(Console.ReadLine());
+            int N;
+            Console.WriteLine("Digite o número N");
+            N = int.Parse(Console.ReadLine());
+            string c;
+            c = Console.ReadLine();
+            char d = c[0];
+            
+            for (int i = 0; i < txt.Length; i+= N)
+            {
+                if(i + N > txt.Length)
+                {
+                    Console.WriteLine(txt.Substring(i));
+                }
+                else
+                {
+                    Console.WriteLine(txt.Substring(i, N));
+                }
+            }
+            string [] palavras = txt.Split(' ');
+            int qtd = 0000;
+            for (int i = 0; i < palavras.Length; i++)
+            {
+                if (palavras[i][0] == d)
+                {
+                    qtd++;
+                }
+                if (palavras[i][0].ToString() == d.ToString().ToUpper())
+                {
+                    qtd++;
+                }
+            }
+
+            //foreach (var item in palavras)
+            //{
+            //    if (item[0] == d)
+            //    {
+            //        qtd++;
+            //    }
+            //}
+           Console.WriteLine(qtd);
+           
+            
