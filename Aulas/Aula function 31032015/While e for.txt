@@ -1,0 +1,9 @@
+for - Sabe quantas vezes
+
+while - Não sabe quando parar 
+
+While ( booleana )
+
+for ( INICIALIZAÇÃO , CRITÉRIO DE PARADA , ATUALIZAÇÃO )
+Primeiro atualiza depois testa no critério de parada .
+

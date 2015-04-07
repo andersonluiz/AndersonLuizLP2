@@ -1,0 +1,12 @@
+Tem que ter no mínimo 3 pastas
+
+Exercícios > Aula _ Dia Mes
+
+
+Listas > Lista 1
+         Lista 2 
+         etc
+
+Trabalhos > Trabalho 1
+            Trabalho 2
+            etc

@@ -1,0 +1,17 @@
+    static void Main(string[] args)
+        {
+            int n;
+        }
+
+        static bool Ehpar(int num)
+        {
+
+            return (num % 2 == 0);
+}
+        static bool EhMult3(int num)
+    {
+        return num % 3 == 0; 
+    }
+    }
+
+}
