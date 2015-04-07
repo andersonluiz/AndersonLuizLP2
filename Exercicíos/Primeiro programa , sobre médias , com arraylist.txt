@@ -1,0 +1,18 @@
+double numeros = 1;
+                        
+            double ze = 0;
+            ArrayList xoxo = new ArrayList();
+            
+           while(numeros != 0)
+           {
+               Console.WriteLine("Digite um número para calcular a média , 0 para parar :"); 
+               numeros = int.Parse(Console.ReadLine());
+               
+               if(numeros != 0){
+               xoxo.Add(numeros);
+               xoxo.Remove(0);
+               ze += numeros;
+               }
+           }
+           double media = ze / xoxo.Count;
+           Console.WriteLine("Você digitou 0 para parar , sua média é : {0}" , media);
