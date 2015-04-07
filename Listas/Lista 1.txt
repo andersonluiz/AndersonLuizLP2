@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lista1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string x;
+            double num = 0;
+            double fatorial = 0;
+
+            Console.WriteLine("Digite o exercício que você deseja visitar .Digite em minusculo , sem acento e separado.Exemplo:exercicio 1");
+            x = Convert.ToString(Console.ReadLine());
+            if (x == "exercicio 1")
+            {
+              exercicio1(num,fatorial);
+
+            }
+            else if (x == "exercicio 2")
+            {
+
+
+            }
+            else if (x == "exercicio 3")
+            {
+
+            }
+            else if (x == "exercicio 4")
+            {
+
+            }
+            else if (x == "exercicio 5")
+            {
+
+            }
+            else if (x == "exercicio 6")
+            {
+
+            }
+            else if (x == "exercicio 7")
+            {
+
+            }
+            else if (x == "exercicio 8")
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("O seu exercício é inválido , lembrando , Digite em minusculo , sem acento e separado.Exemplo:exercicio 1");
+
+            }
+
+        }
+        static double exercicio1(double num , double fatorial)
+        {
+
+            
+            Console.WriteLine("Digite o numero que você deseja o fatorial:");
+            num = int.Parse(Console.ReadLine());
+            fatorial = num;
+            for (double i = 1; i < num; i++)
+            {
+                fatorial *= i;
+
+            }
+
+
+            Console.WriteLine("O fatorial dos numeros é : {0}", fatorial);
+            return fatorial;
+        }
+       
+    }
+}
