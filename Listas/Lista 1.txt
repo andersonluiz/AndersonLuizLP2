@@ -1,3 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
 namespace Lista1
 {
     class Program
@@ -28,7 +35,7 @@ namespace Lista1
             }
             else if (x == "exercicio 4")
             {
-
+                exercicio4();
             }
             else if (x == "exercicio 5")
             {
@@ -149,3 +156,65 @@ namespace Lista1
 
 
                 return (true);
+}
+        static bool exercicio4()
+        {
+            string a;
+            int pontodoa = 0;
+            int pontodob = 0;
+
+            
+
+            for (int i = 0; i < 1999; i++)
+            {
+                Console.WriteLine("Digite de quem foi o ponto:");
+                a = Convert.ToString(Console.ReadLine());
+                if (a == "1")
+                {
+                    pontodoa++;
+                    Console.WriteLine("Ponto do jogador 1 .");
+                    if (pontodoa >= 21)
+                    {
+                        if (pontodoa - pontodob >= 2)
+                        {
+                            Console.WriteLine("O jogador 1 é o vencedor");
+                            i = 20000;
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
+
+
+
+
+
+                else if (a == "2")
+                {
+                    pontodob++;
+                    Console.WriteLine("Ponto do jogador 2.");
+                    if (pontodob >= 21)
+                    {
+                        if (pontodob - pontodoa >= 2)
+                        {
+                            Console.WriteLine("O jogador 2 é o vencedor");
+                            i = 20000;
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Digite apenas 1 ou 2");
+                }
+            }
+            return true;
+        }
+        }
+    }
+
