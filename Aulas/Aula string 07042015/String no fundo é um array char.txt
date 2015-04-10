@@ -1,0 +1,24 @@
+ string a = "teste";
+ string b = a[2].ToString();
+
+a =
+[t][e][s][t][e]
+
+
+
+
+
+String :
+Console.WriteLine:
+\n - Serve para pular linha
+\t - Serve Como tab
+\r - Só mostrara no Console.WriteLine o que está depois do \r
+
+Métodos e atributos : 
+Lenght -> Tamanho da string.
+ToUpper() -> "u" > "U"
+ToLower() - Faze o contrário
+Substring(posição) pega um pedaço da string.
+exemplo : Substring(2) pegará apartir da posição 2
+Split("") -> Divide
+Exemplo : "Teste".Split("s");
