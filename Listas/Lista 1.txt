@@ -99,25 +99,25 @@ namespace Lista1
             string funcionario;
             int salario;
             int novosalario;
-            
             Console.WriteLine("Digite o números de funcionários que contém a empresa");
             funcionarios = int.Parse(Console.ReadLine());
-            
-            
+            ArrayList novossalarios = new ArrayList(funcionarios);
+            ArrayList nomesdosfuncionarios = new ArrayList(funcionarios);
+            ArrayList salariosatuais = new ArrayList(funcionarios);
             
             for (int i = 0; i < funcionarios; i++)
             {
                 Console.WriteLine("Digite o nome do funcionário");
                 funcionario = Convert.ToString(Console.ReadLine());
-                
+                nomesdosfuncionarios.Add(funcionario);
                 Console.WriteLine("Digite o salário atual do funcionário");
                 salario = int.Parse(Console.ReadLine());
-                
+                salariosatuais.Add(salario);
                 if (0 < salario && salario < 2999)
                 {
                     
                     novosalario = salario + (salario * 25 / 100);
-                    Console.WriteLine("O funcionário {0} tinha o salário de {1} porém com o reajuste passou a ganhar {2}", funcionario , salario ,novosalario);
+                    novossalarios.Add(novosalario);
 
                    
                 }
@@ -125,14 +125,14 @@ namespace Lista1
                 {
 
                     novosalario = salario + (salario * 20 / 100);
-                    Console.WriteLine("O funcionário {0} tinha o salário de {1} porém com o reajuste passou a ganhar {2}", funcionario, salario, novosalario);
+                    novossalarios.Add(novosalario);
 
                     
                 }
                 else if (4000 < salario && salario < 4999)
                 {
                     novosalario = salario + (salario * 15 / 100);
-                    Console.WriteLine("O funcionário {0} tinha o salário de {1} porém com o reajuste passou a ganhar {2}", funcionario, salario, novosalario);
+                    novossalarios.Add(novosalario);
                     
 
                     
@@ -140,7 +140,7 @@ namespace Lista1
                 else if (5000 < salario && salario < 10000000)
                 {
                     novosalario = salario + (salario * 10 / 100);
-                    Console.WriteLine("O funcionário {0} tinha o salário de {1} porém com o reajuste passou a ganhar {2}", funcionario, salario, novosalario);
+                    novossalarios.Add(novosalario);
    
                 }
                 else
@@ -152,7 +152,11 @@ namespace Lista1
                 
                 
             }
-                
+            for (int j = 0; j < funcionarios; j++)
+            {
+                Console.WriteLine("O funcionário {0} recebia {1} porém com o reajuste ele vai receber {2}", nomesdosfuncionarios[j], salariosatuais[j], novossalarios[j]);
+            }
+
 
 
                 return (true);
@@ -217,4 +221,3 @@ namespace Lista1
         }
         }
     }
-
