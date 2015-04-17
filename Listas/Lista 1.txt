@@ -276,6 +276,7 @@ namespace Lista1
             Console.WriteLine("As duas maiores alturas foram {0} e {1} . {2} mulheres tem essas maiores alturas. ", maior, maior2, quantotal);
             
         }
+<<<<<<< HEAD
 
 
         
@@ -285,3 +286,11 @@ namespace Lista1
 
         }
     
+=======
+<<<<<<< HEAD
+    }
+=======
+    }
+
+>>>>>>> ce10021ff9b930beabc2131abf025815eaa2c7cd
+>>>>>>> 13254147b02b2d7c798e84d04ce9721b5c9a39a3
