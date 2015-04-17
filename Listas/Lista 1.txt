@@ -17,50 +17,50 @@ namespace Lista1
             
 
 
-            Console.WriteLine("Digite o exercício que você deseja visitar .Digite em minusculo , sem acento e separado.Exemplo:exercicio 1");
+            Console.WriteLine("Digite o numero do exercício que você deseja visitar .");
             x = Convert.ToString(Console.ReadLine());
             if (x == "exercicio 1")
             {
                 exercicio1(num, fatorial);
 
             }
-            else if (x == "exercicio 2")
+            else if (x == "2")
             {
-
+                
 
             }
-            else if (x == "exercicio 3")
+            else if (x == "3")
             {
                 exercicio3();
             }
-            else if (x == "exercicio 4")
+            else if (x == "4")
             {
                 exercicio4();
             }
-            else if (x == "exercicio 5")
+            else if (x == "5")
             {
 
             }
-            else if (x == "exercicio 6")
+            else if (x == "6")
+            {
+                exercicio6();
+            }
+            else if (x == "7")
             {
 
             }
-            else if (x == "exercicio 7")
-            {
-
-            }
-            else if (x == "exercicio 8")
+            else if (x == "8")
             {
                 exercicio8();
             }
             else
             {
-                Console.WriteLine("O seu exercício é inválido , lembrando , Digite em minusculo , sem acento e separado.Exemplo:exercicio 1");
+                Console.WriteLine("O seu exercício é inválido , lembrando , Digite apenas o numero do exercicio entre 1 e 8");
 
             }
 
         }
-        static double exercicio1(double num, double fatorial)
+        static void exercicio1(double num, double fatorial)
         {
 
 
@@ -75,9 +75,9 @@ namespace Lista1
 
 
             Console.WriteLine("O fatorial dos numeros é : {0}", fatorial);
-            return fatorial;
+            
         }
-        static int exercicio8()
+        static void exercicio8()
         {
             int numero;
             int soma = 0;
@@ -88,12 +88,12 @@ namespace Lista1
                 soma += i;
             }
             Console.WriteLine("A soma de todos os numeros entre 1 e seu numero é de : {0} ", soma);
-            return (soma);
+            
 
         }
 
 
-        static bool exercicio3()
+        static void exercicio3()
         {
             int funcionarios;
             string funcionario;
@@ -159,9 +159,9 @@ namespace Lista1
 
 
 
-                return (true);
+                
 }
-        static bool exercicio4()
+        static void exercicio4()
         {
             string a;
             int pontodoa = 0;
@@ -217,7 +217,71 @@ namespace Lista1
                     Console.WriteLine("Digite apenas 1 ou 2");
                 }
             }
-            return true;
+            
         }
+        static void exercicio6()
+        {
+            
+            string nome;
+            double altura;
+            double maior = 0;
+            double maior2 = 0;
+            double quant = 1;
+            double quant2 = 1;
+            double quantotal;
+            
+           
+            for (int i = 0; i < 2500; i++)
+            {
+                Console.WriteLine("Digite o nome da mulher  :");
+                nome = Convert.ToString(Console.ReadLine());
+
+                if (nome == "FIM")
+                {
+                    i = 2501;
+                }
+                else
+              {
+                    Console.WriteLine("Digite a altura da mulher:");
+                    altura = float.Parse(Console.ReadLine());
+                     
+                    if(altura > maior)
+                    {
+                        maior = altura;
+                        quant = 1;
+                    }
+                    else if (maior == altura)
+                    {
+                        quant++;
+
+                    }
+                    else if( altura > maior2)
+                    {
+                        maior2 = altura;
+                        quant2 = 1;
+
+                    }
+                    else if ( maior2 == altura)
+                    {
+                        quant2++;
+                    }
+                    else
+                    {
+
+                    }
+              }
+           }
+            quantotal = quant + quant2;
+            
+            Console.WriteLine("As duas maiores alturas foram {0} e {1} . {2} mulheres tem essas maiores alturas. ", maior, maior2, quantotal);
+            
         }
-    }
+
+
+        
+
+        }
+
+
+        }
+    
