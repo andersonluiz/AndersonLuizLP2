@@ -1,32 +1,40 @@
-int quant = 0;
-            ArrayList zeze = new ArrayList();
-            string amba;
-            Console.WriteLine("Digite uma mensagem:");
-            amba = Console.ReadLine();
-            zeze.Add(amba);
-            Console.WriteLine(zeze.Count);
-           
-            for (int i = -zeze.Count; i < zeze.Count; i++)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exercício01_Vogais
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string frase;
+            string vogais = "aeiouAEIOUÁÉÍÓÚáéíóúÀà";
+            string vogal = "";
+            int i = 0;
+
+            
+            frase = Convert.ToString(Console.ReadLine());
+
+            while (i < frase.Length)
             {
-                if (zeze.Contains("a"))
+
+                for (int j = 0; j < vogais.Length; j++)
                 {
-                    quant++;
+
+                    if (frase[i] == vogais[j])
+                    {
+                        vogal += frase[i];
+                    }
+
                 }
-                if (zeze.Contains("e"))
-                {
-                    quant++;
-                }
-                if (zeze.Contains("i"))
-                {
-                    quant++;
-                }
-                if (zeze.Contains("o"))
-                {
-                    quant++;
-                }
-                if (zeze.Contains("u"))
-                {
-                    quant++;
-                }
-                Console.WriteLine("A mensagem tem {0} vogais ", quant);
+                i++;
             }
+            
+            Console.WriteLine("A sua frase tem " + vogal.Length + " vogais");
+        }
+
+    }
+}
