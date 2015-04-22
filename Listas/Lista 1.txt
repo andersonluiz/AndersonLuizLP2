@@ -12,8 +12,7 @@ namespace Lista1
         static void Main(string[] args)
         {
             string x;
-            double num = 0;
-            double fatorial = 0;
+            
             
 
 
@@ -21,12 +20,12 @@ namespace Lista1
             x = Convert.ToString(Console.ReadLine());
             if (x == "exercicio 1")
             {
-                exercicio1(num, fatorial);
+                exercicio1();
 
             }
             else if (x == "2")
             {
-                
+                Console.WriteLine("Esse exercicio não foi resolvido por falta de capacidade.");
 
             }
             else if (x == "3")
@@ -47,7 +46,7 @@ namespace Lista1
             }
             else if (x == "7")
             {
-
+                exercicio7();
             }
             else if (x == "8")
             {
@@ -60,10 +59,11 @@ namespace Lista1
             }
 
         }
-        static void exercicio1(double num, double fatorial)
+        static void exercicio1()
         {
 
-
+            double num;
+            double fatorial;
             Console.WriteLine("Digite o numero que você deseja o fatorial:");
             num = int.Parse(Console.ReadLine());
             fatorial = num;
@@ -77,6 +77,11 @@ namespace Lista1
             Console.WriteLine("O fatorial dos numeros é : {0}", fatorial);
             
         }
+        static void exercicio2()
+        {
+            // Exercício não resolvido.
+        }
+
         static void exercicio8()
         {
             int numero;
@@ -334,10 +339,178 @@ namespace Lista1
         }
 
 
+        static void exercicio7()
+        {
+            ArrayList nadadores = new ArrayList();
+            ArrayList ClacificacaoNadador = new ArrayList();
+            ArrayList TmpDosNadadores = new ArrayList();
+            ArrayList ClubDosNadadores = new ArrayList();
+            int[] PntsClubeProvas = new int[2] { 0, 0 };
+            int[] PntsClubeCompeticao = new int[2] { 0, 0 };
+            int NumDaProva = 0;
+            int QntDeNadadores = 0;
+            double[] LgrTempo = new double[4] { 0, 0, 0, 0 };
+            string[] LgrsClub = new string[4] { "", "", "", "" };
+            
+
+            while (NumDaProva != 9999 || QntDeNadadores != 0)
+            {
+                Console.WriteLine("Informe o número da prova: ");
+                NumDaProva = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Irforme a quandidade de nadadores que participaram: ");
+                QntDeNadadores = int.Parse(Console.ReadLine());
+
+                if (QntDeNadadores != 0 || NumDaProva != 9999  )
+                {
+
+                    for (int i = 0; i < QntDeNadadores; i++)
+                    {
+                        Console.WriteLine("Informe o nome do {0}° nadador: ", i + 1);
+                        nadadores.Add(Console.ReadLine());
+
+                        Console.WriteLine("Informe a classificação dele: ");
+                        ClacificacaoNadador.Add(Console.ReadLine());
+
+                        Console.WriteLine("Informe o tempo (em segundos): ");
+                        TmpDosNadadores.Add(double.Parse(Console.ReadLine()));
+
+                        Console.WriteLine("Informe qual o clube  dele: ");
+                        ClubDosNadadores.Add(Console.ReadLine().ToUpper());
+
+                    }
+
+                    int I = 0;
+
+                    foreach (double tempo in TmpDosNadadores)
+                    {
+                        if (tempo < LgrTempo[0] || I == 0)
+                        {
+                            LgrTempo[3] = LgrTempo[2];
+                            LgrTempo[2] = LgrTempo[1];
+                            LgrTempo[1] = LgrTempo[0];
+                            LgrTempo[0] = tempo;
+
+                            LgrsClub[3] = LgrsClub[2];
+                            LgrsClub[2] = LgrsClub[1];
+                            LgrsClub[1] = LgrsClub[0];
+                            LgrsClub[0] = ClubDosNadadores[I].ToString();
+                        }
+
+                        else if (tempo < LgrTempo[1] || I == 1)
+                        {
+                            LgrTempo[3] = LgrTempo[2];
+                            LgrTempo[2] = LgrTempo[1];
+                            LgrTempo[1] = tempo;
+
+                            LgrsClub[3] = LgrsClub[2];
+                            LgrsClub[2] = LgrsClub[1];
+                            LgrsClub[1] = ClubDosNadadores[I].ToString();
+                        }
+
+                        else if (tempo < LgrTempo[2] || I == 2)
+                        {
+                            LgrTempo[3] = LgrTempo[2];
+                            LgrTempo[2] = tempo;
+
+                            LgrsClub[3] = LgrsClub[2];
+                            LgrsClub[2] = ClubDosNadadores[I].ToString();
+                        }
+
+                        else if (tempo < LgrTempo[3] || I == 3)
+                        {
+                            LgrTempo[3] = tempo;
+
+                            LgrsClub[3] = ClubDosNadadores[I].ToString();
+                        }
+                        I++;
+                    }
+
+                    I = 0;
+                    foreach (string clube in LgrsClub)
+                    {
+                        if (clube == "A")
+                        {
+                            if (I == 0)
+                            {
+                                PntsClubeProvas[0] += 9;
+                                PntsClubeCompeticao[0] += 9;
+                            }
+
+                            else if (I == 1)
+                            {
+                                PntsClubeProvas[0] += 6;
+                                PntsClubeCompeticao[0] += 6;
+                            }
+
+                            else if (I == 2)
+                            {
+                                PntsClubeProvas[0] += 4;
+                                PntsClubeCompeticao[0] += 4;
+                            }
+
+                            else
+                            {
+                                PntsClubeProvas[0] += 3;
+                                PntsClubeCompeticao[0] += 3;
+                            }
+                        }
+
+                        else if (clube == "B")
+                        {
+                            if (I == 0)
+                            {
+                                PntsClubeProvas[1] += 9;
+                                PntsClubeCompeticao[1] += 9;
+                            }
+
+                            else if (I == 1)
+                            {
+                                PntsClubeProvas[1] += 6;
+                                PntsClubeCompeticao[1] += 6;
+                            }
+
+                            else if (I == 2)
+                            {
+                                PntsClubeProvas[1] += 4;
+                                PntsClubeCompeticao[1] += 4;
+                            }
+
+                            else
+                            {
+                                PntsClubeProvas[1] += 3;
+                                PntsClubeCompeticao[1] += 3;
+                            }
+                        }
+
+                        I++;
+                    }
+
+                    Console.WriteLine("Na prova: {0} , o clube A ganhou: {1} pontos e o clube B ganhou: {2} pontos", NumDaProva, PntsClubeProvas[0], PntsClubeProvas[1]);
+                }
+            }
+
+            if (PntsClubeCompeticao[0] > PntsClubeCompeticao[1])
+            {
+                Console.WriteLine("O clube A ganhou.");
+            }
+
+            else if (PntsClubeCompeticao[1] > PntsClubeCompeticao[0])
+            {
+                Console.WriteLine("O clube B ganhou.");
+            }
+
+            else
+            {
+                Console.WriteLine("Os times empataram.");
+            }
+
+        }
+
+        }
+
+        }
+
+
         
-
-        }
-
-
-        }
     
