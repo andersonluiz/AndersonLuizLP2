@@ -1,0 +1,78 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exercicionadadores
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int Provas = 0; // 3 = NumProvas
+            int Participantes = 0; // 5 = NumParticipantes
+
+            Provas = int.Parse(Console.ReadLine());
+            Participantes = int.Parse(Console.ReadLine());
+
+
+            string[] participantes = new string[Participantes];
+            double[,] tempo = new double[Provas, Participantes];
+            string[] vencedor = new string[Provas];
+            double[] tempovencedor = new double[Provas];
+            double[] tempototal = new double[Participantes];
+            double tempocampeao = 0;
+            string campeao = "";
+
+            for (int i = 0; i < Participantes; i++)
+            {
+                participantes[i] = Console.ReadLine();
+            }
+
+            for (int i = 0; i < Provas; i++)
+            {
+                for (int j = 0; j < Participantes; j++)
+                {
+                    tempo[i, j] = double.Parse(Console.ReadLine());
+                }
+            }
+
+            for (int i = 0; i < Provas; i++)
+            {
+                for (int j = 0; j < Participantes; j++)
+                {
+                    if (tempo[i, j] < tempovencedor[i] || (j == 0))
+                    {
+                        tempovencedor[i] = tempo[i, j];
+                        vencedor[i] = participantes[j];
+                    }
+                }
+            }
+
+            for (int i = 0; i <Participantes; i++)
+            {
+                tempototal[i] = tempo[0, i] + tempo[1, i] + tempo[2, i];
+            }
+
+            for (int i = 0; i < Participantes; i++)
+            {
+                if (tempototal[i] < tempocampeao || i == 0)
+                {
+                    tempocampeao = tempototal[i];
+                    campeao = participantes[i];
+                }
+            }
+
+            for (int i = 0; i < Provas; i++)
+            {
+                Console.WriteLine("{0} ganhou a prova {1}.", vencedor[i], i + 1);
+            }
+
+            Console.WriteLine("O campeão foi {0}.", campeao);
+            Console.WriteLine("Tempo total {0}segundos", tempocampeao);
+
+        }
+    }
+}

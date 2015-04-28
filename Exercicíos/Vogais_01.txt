@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exercício01_Vogais
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string frase;
+            string vogais = "aeiouAEIOUÁÉÍÓÚáéíóúÀà";
+            string vogal = "";
+            int i = 0;
+
+            
+            frase = Convert.ToString(Console.ReadLine());
+
+            while (i < frase.Length)
+            {
+
+                for (int j = 0; j < vogais.Length; j++)
+                {
+
+                    if (frase[i] == vogais[j])
+                    {
+                        vogal += frase[i];
+                    }
+
+                }
+                i++;
+            }
+            
+            Console.WriteLine("A sua frase tem " + vogal.Length + " vogais");
+        }
+
+    }
+}

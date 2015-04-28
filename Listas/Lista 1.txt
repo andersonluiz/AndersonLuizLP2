@@ -12,58 +12,58 @@ namespace Lista1
         static void Main(string[] args)
         {
             string x;
-            double num = 0;
-            double fatorial = 0;
+            
             
 
 
-            Console.WriteLine("Digite o exercício que você deseja visitar .Digite em minusculo , sem acento e separado.Exemplo:exercicio 1");
+            Console.WriteLine("Digite o numero do exercício que você deseja visitar .");
             x = Convert.ToString(Console.ReadLine());
             if (x == "exercicio 1")
             {
-                exercicio1(num, fatorial);
+                exercicio1();
 
             }
-            else if (x == "exercicio 2")
+            else if (x == "2")
             {
-
+                Console.WriteLine("Esse exercicio não foi resolvido por falta de capacidade.");
 
             }
-            else if (x == "exercicio 3")
+            else if (x == "3")
             {
                 exercicio3();
             }
-            else if (x == "exercicio 4")
+            else if (x == "4")
             {
                 exercicio4();
             }
-            else if (x == "exercicio 5")
+            else if (x == "5")
             {
-
+                exercicio5();
             }
-            else if (x == "exercicio 6")
+            else if (x == "6")
             {
-
+                exercicio6();
             }
-            else if (x == "exercicio 7")
+            else if (x == "7")
             {
-
+                exercicio7();
             }
-            else if (x == "exercicio 8")
+            else if (x == "8")
             {
                 exercicio8();
             }
             else
             {
-                Console.WriteLine("O seu exercício é inválido , lembrando , Digite em minusculo , sem acento e separado.Exemplo:exercicio 1");
+                Console.WriteLine("O seu exercício é inválido , lembrando , Digite apenas o numero do exercicio entre 1 e 8");
 
             }
 
         }
-        static double exercicio1(double num, double fatorial)
+        static void exercicio1()
         {
 
-
+            double num;
+            double fatorial;
             Console.WriteLine("Digite o numero que você deseja o fatorial:");
             num = int.Parse(Console.ReadLine());
             fatorial = num;
@@ -75,9 +75,14 @@ namespace Lista1
 
 
             Console.WriteLine("O fatorial dos numeros é : {0}", fatorial);
-            return fatorial;
+            
         }
-        static int exercicio8()
+        static void exercicio2()
+        {
+            // Exercício não resolvido.
+        }
+
+        static void exercicio8()
         {
             int numero;
             int soma = 0;
@@ -88,36 +93,36 @@ namespace Lista1
                 soma += i;
             }
             Console.WriteLine("A soma de todos os numeros entre 1 e seu numero é de : {0} ", soma);
-            return (soma);
+            
 
         }
 
 
-        static bool exercicio3()
+        static void exercicio3()
         {
             int funcionarios;
             string funcionario;
             int salario;
             int novosalario;
-            
             Console.WriteLine("Digite o números de funcionários que contém a empresa");
             funcionarios = int.Parse(Console.ReadLine());
-            
-            
+            ArrayList novossalarios = new ArrayList(funcionarios);
+            ArrayList nomesdosfuncionarios = new ArrayList(funcionarios);
+            ArrayList salariosatuais = new ArrayList(funcionarios);
             
             for (int i = 0; i < funcionarios; i++)
             {
                 Console.WriteLine("Digite o nome do funcionário");
                 funcionario = Convert.ToString(Console.ReadLine());
-                
+                nomesdosfuncionarios.Add(funcionario);
                 Console.WriteLine("Digite o salário atual do funcionário");
                 salario = int.Parse(Console.ReadLine());
-                
+                salariosatuais.Add(salario);
                 if (0 < salario && salario < 2999)
                 {
                     
                     novosalario = salario + (salario * 25 / 100);
-                    Console.WriteLine("O funcionário {0} tinha o salário de {1} porém com o reajuste passou a ganhar {2}", funcionario , salario ,novosalario);
+                    novossalarios.Add(novosalario);
 
                    
                 }
@@ -125,14 +130,14 @@ namespace Lista1
                 {
 
                     novosalario = salario + (salario * 20 / 100);
-                    Console.WriteLine("O funcionário {0} tinha o salário de {1} porém com o reajuste passou a ganhar {2}", funcionario, salario, novosalario);
+                    novossalarios.Add(novosalario);
 
                     
                 }
                 else if (4000 < salario && salario < 4999)
                 {
                     novosalario = salario + (salario * 15 / 100);
-                    Console.WriteLine("O funcionário {0} tinha o salário de {1} porém com o reajuste passou a ganhar {2}", funcionario, salario, novosalario);
+                    novossalarios.Add(novosalario);
                     
 
                     
@@ -140,7 +145,7 @@ namespace Lista1
                 else if (5000 < salario && salario < 10000000)
                 {
                     novosalario = salario + (salario * 10 / 100);
-                    Console.WriteLine("O funcionário {0} tinha o salário de {1} porém com o reajuste passou a ganhar {2}", funcionario, salario, novosalario);
+                    novossalarios.Add(novosalario);
    
                 }
                 else
@@ -152,12 +157,16 @@ namespace Lista1
                 
                 
             }
+            for (int j = 0; j < funcionarios; j++)
+            {
+                Console.WriteLine("O funcionário {0} recebia {1} porém com o reajuste ele vai receber {2}", nomesdosfuncionarios[j], salariosatuais[j], novossalarios[j]);
+            }
+
+
+
                 
-
-
-                return (true);
 }
-        static bool exercicio4()
+        static void exercicio4()
         {
             string a;
             int pontodoa = 0;
@@ -213,12 +222,295 @@ namespace Lista1
                     Console.WriteLine("Digite apenas 1 ou 2");
                 }
             }
-            return true;
+            
         }
-        }
-<<<<<<< HEAD
-    }
-=======
-    }
+        static void exercicio6()
+        {
 
->>>>>>> ce10021ff9b930beabc2131abf025815eaa2c7cd
+            ArrayList mulheres = new ArrayList();
+            ArrayList Alturas = new ArrayList();
+            ArrayList linhadeentrada = new ArrayList();
+            int[] alturasmaiores = new int[ 2 ] { 0, 0 };
+            int[] mulheresaltas = new int[ 2 ] { 0, 0 };
+            string texto = "";
+
+            while (texto != "FIM")
+
+            {
+
+                Console.Write("Nome da mulher : ");
+                mulheres.Add(Console.ReadLine());
+
+                texto = mulheres[mulheres.Count - 1].ToString().ToUpper();
+
+                if (texto == "FIM")
+                {
+                    mulheres.Remove(mulheres[mulheres.Count - 1]);
+                }
+
+                else
+                {
+                    Console.Write("Altura da mulher (em centímetros): ");
+                    Alturas.Add(int.Parse(Console.ReadLine()));
+                }
+
+            }
+
+            foreach (string participante in mulheres)
+            {
+                linhadeentrada.Add(participante);
+            }
+
+            int i = 0;
+
+            foreach (int altura in Alturas)
+            {
+                linhadeentrada[i] += "  " + altura + "centimetros";
+
+                if (altura > alturasmaiores[0])
+                {
+                    alturasmaiores[1] = alturasmaiores[0];
+                    mulheresaltas[1] = mulheresaltas[0];
+                    alturasmaiores[0] = altura;
+                    mulheresaltas[0] = 1;
+                }
+                else if (altura == alturasmaiores[0])
+                {
+                    mulheresaltas[0]++;
+                }
+
+                if ((altura > alturasmaiores[1] && altura != alturasmaiores[0] || i == 0))
+                {
+                    alturasmaiores[1] = altura;
+                    mulheresaltas[1] = 1;
+                }
+                else if (altura == alturasmaiores[1])
+                {
+                    mulheresaltas[1]++;
+                }
+
+                i++;
+            }
+
+            foreach (string LinhaDeEntrada in linhadeentrada)
+            {
+                Console.WriteLine("{0}", LinhaDeEntrada);
+            }
+
+            Console.WriteLine("A maior altura é {0} centimetros e {1} mulher(es) possuem essa altura.", alturasmaiores[0], mulheresaltas[0]);
+            Console.WriteLine("A segunda maior é {0} centimetros e {1} mulher(es) possuem essa altura.", alturasmaiores[1], mulheresaltas[1]);
+
+        }
+        static void exercicio5()
+        {
+            int kmpercorridos = 0;
+            int litrosgasto = 0;
+            int LitrosTotal = 50;
+            double resultado = 0;
+            bool carroligado = true;
+
+            while (carroligado)
+            {
+                Console.WriteLine("Ligue o aparelho");
+                Console.Write("Informe quantos km foram percorridos de acordo com o aparelho: ");
+                kmpercorridos += int.Parse(Console.ReadLine());
+                Console.Write("Informe quantos Litros foram gastos de acordo com o aparelho: ");
+                litrosgasto += int.Parse(Console.ReadLine());
+                LitrosTotal -= litrosgasto;
+                if (kmpercorridos <= 599 || LitrosTotal >= 1)
+                {
+                    carroligado = false;
+                }
+            }
+
+            if (kmpercorridos >= 600)
+            {
+                Console.WriteLine("O carro alcançou seu destino.");
+                resultado = kmpercorridos / litrosgasto;
+                Console.WriteLine("O desempenho do carro foi de {0} Kilometros por litro.", resultado);
+            }
+
+            else
+            {
+                Console.WriteLine("acabou o cosbustível do carro antes de chegar ao destino.");
+                resultado = kmpercorridos / litrosgasto;
+                Console.WriteLine("O desempenho do carro foi de {0} Kilometros por litro.", resultado);
+            }
+        }
+
+
+        static void exercicio7()
+        {
+            ArrayList nadadores = new ArrayList();
+            ArrayList ClacificacaoNadador = new ArrayList();
+            ArrayList TmpDosNadadores = new ArrayList();
+            ArrayList ClubDosNadadores = new ArrayList();
+            int[] PntsClubeProvas = new int[2] { 0, 0 };
+            int[] PntsClubeCompeticao = new int[2] { 0, 0 };
+            int NumDaProva = 0;
+            int QntDeNadadores = 0;
+            double[] LgrTempo = new double[4] { 0, 0, 0, 0 };
+            string[] LgrsClub = new string[4] { "", "", "", "" };
+            
+
+            while (NumDaProva != 9999 || QntDeNadadores != 0)
+            {
+                Console.WriteLine("Informe o número da prova: ");
+                NumDaProva = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Irforme a quandidade de nadadores que participaram: ");
+                QntDeNadadores = int.Parse(Console.ReadLine());
+
+                if (QntDeNadadores != 0 || NumDaProva != 9999  )
+                {
+
+                    for (int i = 0; i < QntDeNadadores; i++)
+                    {
+                        Console.WriteLine("Informe o nome do {0}° nadador: ", i + 1);
+                        nadadores.Add(Console.ReadLine());
+
+                        Console.WriteLine("Informe a classificação dele: ");
+                        ClacificacaoNadador.Add(Console.ReadLine());
+
+                        Console.WriteLine("Informe o tempo (em segundos): ");
+                        TmpDosNadadores.Add(double.Parse(Console.ReadLine()));
+
+                        Console.WriteLine("Informe qual o clube  dele: ");
+                        ClubDosNadadores.Add(Console.ReadLine().ToUpper());
+
+                    }
+
+                    int I = 0;
+
+                    foreach (double tempo in TmpDosNadadores)
+                    {
+                        if (tempo < LgrTempo[0] || I == 0)
+                        {
+                            LgrTempo[3] = LgrTempo[2];
+                            LgrTempo[2] = LgrTempo[1];
+                            LgrTempo[1] = LgrTempo[0];
+                            LgrTempo[0] = tempo;
+
+                            LgrsClub[3] = LgrsClub[2];
+                            LgrsClub[2] = LgrsClub[1];
+                            LgrsClub[1] = LgrsClub[0];
+                            LgrsClub[0] = ClubDosNadadores[I].ToString();
+                        }
+
+                        else if (tempo < LgrTempo[1] || I == 1)
+                        {
+                            LgrTempo[3] = LgrTempo[2];
+                            LgrTempo[2] = LgrTempo[1];
+                            LgrTempo[1] = tempo;
+
+                            LgrsClub[3] = LgrsClub[2];
+                            LgrsClub[2] = LgrsClub[1];
+                            LgrsClub[1] = ClubDosNadadores[I].ToString();
+                        }
+
+                        else if (tempo < LgrTempo[2] || I == 2)
+                        {
+                            LgrTempo[3] = LgrTempo[2];
+                            LgrTempo[2] = tempo;
+
+                            LgrsClub[3] = LgrsClub[2];
+                            LgrsClub[2] = ClubDosNadadores[I].ToString();
+                        }
+
+                        else if (tempo < LgrTempo[3] || I == 3)
+                        {
+                            LgrTempo[3] = tempo;
+
+                            LgrsClub[3] = ClubDosNadadores[I].ToString();
+                        }
+                        I++;
+                    }
+
+                    I = 0;
+                    foreach (string clube in LgrsClub)
+                    {
+                        if (clube == "A")
+                        {
+                            if (I == 0)
+                            {
+                                PntsClubeProvas[0] += 9;
+                                PntsClubeCompeticao[0] += 9;
+                            }
+
+                            else if (I == 1)
+                            {
+                                PntsClubeProvas[0] += 6;
+                                PntsClubeCompeticao[0] += 6;
+                            }
+
+                            else if (I == 2)
+                            {
+                                PntsClubeProvas[0] += 4;
+                                PntsClubeCompeticao[0] += 4;
+                            }
+
+                            else
+                            {
+                                PntsClubeProvas[0] += 3;
+                                PntsClubeCompeticao[0] += 3;
+                            }
+                        }
+
+                        else if (clube == "B")
+                        {
+                            if (I == 0)
+                            {
+                                PntsClubeProvas[1] += 9;
+                                PntsClubeCompeticao[1] += 9;
+                            }
+
+                            else if (I == 1)
+                            {
+                                PntsClubeProvas[1] += 6;
+                                PntsClubeCompeticao[1] += 6;
+                            }
+
+                            else if (I == 2)
+                            {
+                                PntsClubeProvas[1] += 4;
+                                PntsClubeCompeticao[1] += 4;
+                            }
+
+                            else
+                            {
+                                PntsClubeProvas[1] += 3;
+                                PntsClubeCompeticao[1] += 3;
+                            }
+                        }
+
+                        I++;
+                    }
+
+                    Console.WriteLine("Na prova: {0} , o clube A ganhou: {1} pontos e o clube B ganhou: {2} pontos", NumDaProva, PntsClubeProvas[0], PntsClubeProvas[1]);
+                }
+            }
+
+            if (PntsClubeCompeticao[0] > PntsClubeCompeticao[1])
+            {
+                Console.WriteLine("O clube A ganhou.");
+            }
+
+            else if (PntsClubeCompeticao[1] > PntsClubeCompeticao[0])
+            {
+                Console.WriteLine("O clube B ganhou.");
+            }
+
+            else
+            {
+                Console.WriteLine("Os times empataram.");
+            }
+
+        }
+
+        }
+
+        }
+
+
+        
+    
