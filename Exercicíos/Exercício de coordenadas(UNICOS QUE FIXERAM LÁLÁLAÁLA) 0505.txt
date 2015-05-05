@@ -13,7 +13,7 @@ namespace ConsoleApplication1
             int cateto1;
             int cateto2;
             int hipotenusa;
-            
+            double bravo;
             int maior = int.MinValue;
             Console.WriteLine("Digite o número de vetores que desejar:");
             int n = int.Parse(Console.ReadLine());
@@ -28,8 +28,7 @@ namespace ConsoleApplication1
                         int yplision2 = 0;
             for (int i = 0; i < n; i++)
             {
-                Console.WriteLine("Digite as informações do vetor número {0}", i + 1);
-               
+                Console.WriteLine("Digite as informações do vetor número {0}", i + 1);               
                 Console.WriteLine("Digite x1:");
                 x01 = int.Parse(Console.ReadLine());
                 x1[i] = x01;
@@ -49,7 +48,7 @@ namespace ConsoleApplication1
                 cateto1 = (x2[i] - x1[i]) * (x2[i] - x1[i]);
                 cateto2 = (y2[i] - y1[i]) * (y2[i] - y1[i]);
                 hipotenusa = cateto1 + cateto2;
-               
+                
                 if(hipotenusa > maior)
                 {
                     maior = hipotenusa;
@@ -59,11 +58,12 @@ namespace ConsoleApplication1
                   yplision2 = y2[i];
                 }
             }
+            bravo = Math.Sqrt(maior);
             Console.WriteLine("x1 : {0}", xis1);
             Console.WriteLine("x2 : {0}", xis2);
             Console.WriteLine("y1 : {0}", iplisons1);
             Console.WriteLine("y2 : {0}", yplision2);
-
+            Console.WriteLine("O tamanho do vetor é  : {0} ", bravo);
         }
     }
 }
