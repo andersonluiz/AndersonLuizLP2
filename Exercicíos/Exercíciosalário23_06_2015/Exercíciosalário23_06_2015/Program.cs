@@ -16,7 +16,7 @@ namespace Salário23_06_2015
 
             string[] nomesfuncionarios = new string[funcionarios];
 
-            int[] cpfs = new int[funcionarios];
+            string[] cpfs = new string[funcionarios];
 
             string[] datanascimentos = new string[funcionarios];
             double salario;
@@ -30,7 +30,7 @@ namespace Salário23_06_2015
                 Console.WriteLine("Digite o nome do funcionário");
                 nomesfuncionarios[i] = Convert.ToString(Console.ReadLine());
                 Console.WriteLine("Digite o cpf do funcionário");
-                cpfs[i] = int.Parse(Console.ReadLine());
+                cpfs[i] = Convert.ToString(Console.ReadLine());
                 Console.WriteLine("Digite o datanasc do funcionário");
                 datanascimentos[i] = Convert.ToString(Console.ReadLine());
                 Console.WriteLine("Digite o salário do funcionário:");
