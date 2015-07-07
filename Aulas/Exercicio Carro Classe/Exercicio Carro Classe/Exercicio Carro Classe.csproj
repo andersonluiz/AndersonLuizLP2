@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{539735AC-F0B0-40BC-B7F9-E08CAD098FEB}</ProjectGuid>
+    <ProjectGuid>{9CA92ABB-0133-403C-9337-C5664D073610}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Exerciciosalarioscomclasses23_06_2015</RootNamespace>
-    <AssemblyName>Exerciciosalarioscomclasses23_06_2015</AssemblyName>
+    <RootNamespace>Exercicio_Carro_Classe</RootNamespace>
+    <AssemblyName>Exercicio Carro Classe</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Funcionario.cs" />
+    <Compile Include="Carro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
