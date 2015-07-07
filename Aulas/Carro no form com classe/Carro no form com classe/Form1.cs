@@ -29,7 +29,9 @@ namespace Carro_no_form_com_classe
                 c1.consumoKmL = double.Parse(txtConsumo.Text);
                 c1.qtdCombustivelL = double.Parse(txtQtdCombustivel.Text);
                 cadastro.Add(c1);
-                MessageBox.Show(cadastro.Count().ToString());
-        }            
+
+
+             }            
+
     }
 }
