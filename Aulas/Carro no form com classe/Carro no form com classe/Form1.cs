@@ -31,7 +31,18 @@ namespace Carro_no_form_com_classe
                 cadastro.Add(c1);
 
 
-             }            
+             }    
+        private void FormCarro_FormClosed(object sender, EventArgs e)
+        {
+            string s = " ";
+
+            for (int i=0 ; i  < cadastro.Count; i++)
+            {
+                s += " " + cadastro[i];
+            }
+            MessageBox.Show(s);
+
+        }
 
     }
 }
