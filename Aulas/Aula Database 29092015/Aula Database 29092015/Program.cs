@@ -2,91 +2,62 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using MySql.Data;
-using MySql.Data.MySqlClient;
-namespace Aula_Database_29092015
+
+namespace ConsoleApplication1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            
-            
-            int n = 1;
-            while (n != 5)
+            Pessoa P = new Pessoa();
+            string Q;
+
+            Console.Write("Digite 1 para inserir, 2 para consultar e 3 para sair: ");
+            int evaluate = int.Parse(Console.ReadLine());
+
+            while (evaluate != 3)
             {
-                Console.WriteLine("Bem-vindos a central de atendimento , escreva uma das opções abaixos:");
-                Console.WriteLine("1 - Consultar");
-                Console.WriteLine("2 - Inserir novo");
-                Console.WriteLine("3 - Remover");
-                Console.WriteLine("4 - Atualizar");
-                Console.WriteLine("5 - Sair");
-                n = int.Parse(Console.ReadLine());
-                switch (n)
+
+                if (evaluate == 2)
                 {
-
-                    case 1:
-                        Consultar();
-                        break;
-                    case 2:
-
-                        Inserir();
-                        break;
-                    case 3:
-
-                        Remover();
-                        break;
-                    case 4:
-
-                        Atualizar();
-                        break;
-                    case 5:
-                        Console.WriteLine("Obrigado por nos consultar.");
-                        break;
-                    default:
-                        Console.WriteLine("Digite apenas um dos números pedidos");
-                        break;
-
+                    Q = "Select * From pessoa";
+                    P.Consultar(Q);
                 }
+
+                else if (evaluate == 1)
+                {
+                    Console.Write("Nome: ");
+                    P.Nome = Console.ReadLine();
+
+                    Console.Write("Idade: ");
+                    P.Sobrenome = Console.ReadLine();
+
+                    Console.Write("Peso: ");
+                    P.Peso = Convert.ToDouble(Console.ReadLine());
+
+                    Console.Write("Altura: ");
+                    P.Altura = Convert.ToDouble(Console.ReadLine());
+
+                    Console.Write("Telefone: ");
+                    P.Telefone = Console.ReadLine();
+
+
+                    Q = String.Format("INSERT INTO pessoa (nome, sobrenome, peso, altura, telefone) VALUES ('{0}', '{1}', {2}, {3}, '{4}')", P.Nome, P.Sobrenome, P.Peso, P.Altura, P.Telefone);
+                    P.Inserir(Q);
+                }
+
+                else
+                {
+                    Console.WriteLine("Opção Inválida.");
+                }
+
+                Console.Write("Digite 1 para inserir, 2 para consultar e 3 para sair: ");
+                evaluate = int.Parse(Console.ReadLine());
+
             }
-        }
-        public static void Consultar()
-        {
 
-            Console.WriteLine("Método de consulta ");
+            Console.ReadKey();
 
-            
-        }
-        public static void Inserir()
-        {
-             
-            
-            string query = String.Format("INSERT INTO CARRO (Modelo, Marca) VALUES ('{0}', '{1}')", asdasd, dasdasd);
-            //String.Format("Olá, {0}", "Francisco");
-
-            Console.WriteLine("Método de cadastro ");
-        }
-        public static void Remover()
-        {
-            Console.WriteLine("Método de remoção ");
-        }
-        public static void Atualizar()
-        {
-            Console.WriteLine("Método de atualização ");
-        }
-        public void ConsultaBD()
-        {
-            
-            string strConn = "Server=localhost;Database=test;Uid=root;Pwd=";
-            MySqlConnection conn = new MySqlConnection(strConn);
-            MySqlCommand command = new MySqlCommand();
-            command.Connection = conn;
-            command.CommandText = "" ;
-            conn.Open();
-            command.ExecuteNonQuery();
-            conn.Close();
-            
         }
     }
 }
