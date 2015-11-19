@@ -31,7 +31,7 @@ namespace Ultimo_Exercicio
                 Console.WriteLine("Digite sua senha: ");
                 string senha = Console.ReadLine();
 
-                string str = String.Format("SELECT * FROM Usuario WHERE Login = '{0}' AND Senha = '{1}', login,senha");
+                string str = String.Format("SELECT * FROM Usuario WHERE Login = '{0}' AND Senha = '{1}'", login,senha);
                 command.CommandText = str;
 
                 MySqlDataReader reader = command.ExecuteReader();
